@@ -1,35 +1,29 @@
+import Link from "next/link";
+import styles from "./page.module.css";
+
 export default function Home() {
     return (
-        <div
-            style={{
-                padding: "40px",
-            }}
-        >
-            <h1>Store Rating Platform</h1>
+        <div className={styles.container}>
+            <div className={styles.overlay}></div>
 
-            <br />
+            <div className={styles.content}>
+                <h1>Store Rating Platform</h1>
 
-            <a href="/signup">Signup</a>
+                <p>
+                    Discover stores, rate your experience, and manage ratings
+                    through role-based dashboards.
+                </p>
 
-            <br />
-            <br />
+                <div className={styles.buttonGroup}>
+                    <Link href="/signup" className={styles.primaryBtn}>
+                        Create Account
+                    </Link>
 
-            <a href="/login">Login</a>
-
-            <br />
-            <br />
-
-            <a href="/stores">Stores</a>
-
-            <br />
-            <br />
-
-            <a href="/admin">Admin Dashboard</a>
-
-            <br />
-            <br />
-
-            <a href="/owner">Owner Dashboard</a>
+                    <Link href="/login" className={styles.secondaryBtn}>
+                        Login
+                    </Link>
+                </div>
+            </div>
         </div>
     );
 }
