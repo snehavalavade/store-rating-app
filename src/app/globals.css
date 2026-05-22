@@ -5,6 +5,21 @@
 }
 
 body {
-    background: #f4f4f4;
+    background: #f3f4f6;
     font-family: Arial, Helvetica, sans-serif;
+    color: #1f2937;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    transition: 0.2s ease;
+}
+
+button:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
 }

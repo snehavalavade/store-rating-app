@@ -15,6 +15,28 @@ export default function SignupPage() {
     });
 
     const handleSignup = async () => {
+        if (formData.name.length < 5) {
+            alert("Name should be at least 5 characters");
+
+            return;
+        }
+
+        if (formData.address.length > 400) {
+            alert("Address is too long");
+
+            return;
+        }
+
+        const passwordRegex = /^(?=.*[A-Z])(?=.*[\W_]).{8,16}$/;
+
+        if (!passwordRegex.test(formData.password)) {
+            alert(
+                "Password must contain uppercase letter, special character and be 8-16 characters long",
+            );
+
+            return;
+        }
+
         const response = await fetch("/api/signup", {
             method: "POST",
             headers: {
@@ -33,28 +55,6 @@ export default function SignupPage() {
             alert(data.message);
         }
     };
-
-    if (formData.name.length < 5) {
-        alert("Name should be at least 5 characters");
-
-        return;
-    }
-
-    if (formData.address.length > 400) {
-        alert("Address is too long");
-
-        return;
-    }
-
-    const passwordRegex = /^(?=.*[A-Z])(?=.*[\W_]).{8,16}$/;
-
-    if (!passwordRegex.test(formData.password)) {
-        alert(
-            "Password must contain uppercase letter, special character and be 8-16 characters long",
-        );
-
-        return;
-    }
 
     return (
         <div className={styles.container}>
