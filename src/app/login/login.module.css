@@ -6,7 +6,7 @@
 }
 
 .card {
-    width: 400px;
+    width: 350px;
     background: white;
     padding: 30px;
     border-radius: 10px;
@@ -16,16 +16,10 @@
     margin-bottom: 20px;
 }
 
-.card input,
-.card textarea {
+.card input {
     width: 100%;
     margin-bottom: 15px;
     padding: 12px;
-}
-
-.card textarea {
-    height: 100px;
-    resize: none;
 }
 
 .card button {
